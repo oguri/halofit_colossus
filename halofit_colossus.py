@@ -17,7 +17,7 @@ def ks_calc(z, cosmo):
     
 #
 # revised halofit (Takahashi+2012)
-# delta2k_halofit = (k^3 / 2pi^2) * pk_halofit, k in units of Mpc/h
+# delta2k_halofit = (k^3 / 2pi^2) * pk_halofit, k in units of h/Mpc
 # 
 def delta2k_halofit(k, z, cosmo):
     ks = ks_calc(z, cosmo)
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     Pk_lin = cosmo.matterPowerSpectrum(k_bin)
     Pk_nl  = pk_halofit(k_bin, 0.0, cosmo)
 
-    print('# k[Mpc/h] P_lin(k) P_NL(k)')
+    print('# k[h/Mpc] P_lin(k) P_NL(k)')
     for i in range(len(k_bin)):
         print('%e %e %e' % (k_bin[i], Pk_lin[i], Pk_nl[i]))
 
